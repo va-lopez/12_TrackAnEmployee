@@ -1,0 +1,30 @@
+{
+  "name": "12_TrackAnEmployee",
+  "version": "1.0.0",
+  "description": "Back-end APIs to get compnay information",
+  "main": "server.js",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "express": "^4.17.1",
+    "inquirer": "^9.1.0",
+    "mysql2": "^2.3.3"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/va-lopez/12_TrackAnEmployee.git"
+  },
+  "bugs": {
+    "url": "https://github.com/va-lopez/12_TrackAnEmployee/issues"
+  },
+  "homepage": "https://github.com/va-lopez/12_TrackAnEmployee#readme"
+}
