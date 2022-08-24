@@ -1,34 +1,37 @@
 const inquirer = require('inquirer');
-const mysql = require('mysql2');
-const {table} = require('console');
-// const db = require('./db/connection');
+// const table = require('console');
+const prompt = inquirer.createPromptModule();
+const db = require('./db/connection');
+const inputCheck = require('./utils/inputCheck');
 
 
-function getCompany(){
-    inquirer.createPromptModule([{
+const getCompany = () =>{
+    prompt([{
         message: 'What would you like to do',
         type: 'list',
         choices: ['View Departments', 'View Roles', 'View Employees', 'Add Departments', 'Add Role', 'Add Employee', 'Update Employee'],
-        name: 'choice'
+        name: 'action'
     }])
-    .then(action => {
-        // if(action.choice === choices[0]){
-
-        // }else if (action.choice === choices[1]){
-
-        // }else if (action.choice === choices[2]){
-
-        // }else if (action.choice === choices[3]){
-
-        // }else if (action.choice === choices[4]){
-
-        // }else if (action.choice === choices[5]){
-
-        // }else if (action.choice === choices[6]){
-
-        // };
-        console.log("you made a choice "+ action);
+    .then(result => {
+        if(result.choice === 'View Departments'){
+             viewDepts();
+        }else if (action.choice === 'View Roles'){
+            viewRoles();
+        }else if (action.choice === 'View Employees'){
+            viewEmployees();
+        }else if (action.choice === 'Add Departments'){
+            addDept();
+        }else if (action.choice === 'Add Role'){
+            addRole();
+        }else if (action.choice === 'Add Employee'){
+            addEmployee();
+        }else if (action.choice === 'Update Employee'){
+            updateEmployee();
+        }else{
+            return;
+        }
+        getCompany();
     })
 };
 
-getCompany();
+//to do functions to get data
